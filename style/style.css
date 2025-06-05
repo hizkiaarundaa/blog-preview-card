@@ -1,0 +1,133 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+	font-family: "FigTree";
+	src: url("../assets/fonts/static/Figtree-ExtraBold.ttf") format("truetype");
+	font-weight: 800;
+}
+
+@font-face {
+	font-family: "FigTree";
+	src: url("../assets/fonts/static/Figtree-Medium.ttf") format("truetype");
+	font-weight: 500;
+}
+
+:root {
+	--yellow: #f4d04e;
+	--gray-950: #111;
+	--gray-500: #6b6b6b;
+	--white: #fff;
+
+	--spacing-50: 4px;
+	--spacing-100: 8px;
+	--spacing-150: 12px;
+	--spacing-200: 24px;
+
+	--text-preset-1: 24px;
+	--text-preset-2: 16px;
+	--text-preset-3: 14px;
+}
+body {
+	line-height: 1.5;
+	font-family: "FigTree", sans-serif;
+	font-size: 16px;
+	background-color: var(--yellow);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100dvh;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	transition: all ease-in-out 0.3s;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 375px;
+	background-color: var(--white);
+	padding: var(--spacing-200);
+	gap: var(--spacing-200);
+	border-radius: 20px;
+	box-shadow: var(--spacing-100) var(--spacing-100) var(--gray-950);
+	transition: all ease-in-out 0.3s;
+}
+.card:hover {
+	transform: scale(1.03);
+}
+.illustration {
+	max-width: 100%;
+	border-radius: 10px;
+}
+
+.category {
+	font-size: var(--text-preset-3);
+	font-weight: bolder;
+	background-color: var(--yellow);
+	color: var(--gray-950);
+	max-width: fit-content;
+	height: fit-content;
+	padding: var(--spacing-150) var(--spacing-100);
+	display: grid;
+	place-content: center;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-150);
+}
+
+.title {
+	font-size: 1.25rem;
+	transition: all ease-in-out 0.3s;
+	cursor: pointer;
+}
+.title:hover {
+	opacity: 0.75;
+}
+.title:active {
+	color: var(--gray-500);
+	transition: color ease-in-out 0.1s;
+}
+.active {
+	color: var(--yellow);
+}
+
+.author {
+	font-size: var(--text-preset-3);
+	font-weight: bolder;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	gap: var(--spacing-150);
+	width: full;
+	img {
+		width: 2rem;
+	}
+}
+
+.description {
+	font-size: var(--text-preset-3);
+	color: var(--gray-500);
+}
+
+@media (max-width: 375px) {
+	body {
+		padding: 2rem 0;
+	}
+	.card {
+		max-width: 320px;
+	}
+}
